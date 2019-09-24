@@ -1,0 +1,22 @@
+
+<div class="header">
+  CityApp
+</div>
+<h3>Send it with the following contents.</h3>
+
+<%= form_with(model: @city, local: true, url: cities_path) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :content %>
+  <p>content:<%= @city.content %></p>
+  <%= form.submit  "submit" %>
+<% end %>
+
+<%= form_with(model: @city, url: new_city_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "back" %>
+<% end %>
+
+<footer class="footer">
+  <p class="foot-content"> <i>Designed by Blaise Gustave Under Dive Into Code Program</i></p>
+</footer>

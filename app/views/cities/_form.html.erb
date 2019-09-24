@@ -1,0 +1,26 @@
+
+<%= form_with(model: @city, local: true,url: choose_new_or_edit) do |form| %>
+  
+
+    <% if @city.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @city.errors.count %>errors occurred.</h2>
+        <ul>
+  
+        <% @city.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="city_title">
+      <%= form.label :State_the_city_with_Infos %>
+      <%= form.text_field :content %>
+    </div>
+      <%= form.submit %>
+      <%= link_to "Return to List of city screen", cities_path %>
+    <% end %>
+    <footer class="footer">
+       <p class="foot-content"> <i>Designed by Blaise Gustave Under Dive Into Code Program</i></p>
+   </footer>

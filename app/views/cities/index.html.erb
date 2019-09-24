@@ -1,0 +1,32 @@
+
+<div class="header">
+CityApp
+</div>
+<h1>List of Rwandan cities with Infos</h1>
+
+<p><%= notice %></p>
+<table>
+  <tr>
+    <th>Contents</th>
+  </tr>
+
+<% @cities.each do |blog| %>
+  <tr>
+  <tr>
+    <td><%= blog.content %></td>
+    <td><%= link_to link_to 'Check the details', city_path(blog.id) %></td>
+    <td><%= link_to link_to "Edit this Content", edit_city_path(blog.id) %></td>
+    <!-- Define here! -->
+    <td><%= link_to link_to 'Delete this Content', city_path(blog.id), method: :delete %></td>
+  </tr>
+  </tr>
+<% end %>
+
+</table>
+
+<br>
+
+<%= link_to 'Post a new blog', new_city_path %>
+<footer class="footer">
+       <p class="foot-content"> <i>Designed by Blaise Gustave Under Dive Into Code Program</i></p>
+   </footer>
